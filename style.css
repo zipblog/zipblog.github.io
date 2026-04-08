@@ -58,26 +58,7 @@ body, html {
     transform: scale(1.05); /* little bit of hover */
 }
 
-.nav {
-    pointer-events: auto;
-    display: flex;
-    gap: 2.5rem;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #d3d3d3; /* light grey contrasting well with black logo */
-    font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #ffffff;
-}
+/* Nav removed from header, menu items now styled within grid tiles */
 
 /* Interactive Grid System */
 .grid-container {
@@ -130,6 +111,20 @@ body, html {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02); /* Very subtle dark inner edge for safety against light bg */
     transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    
+    /* Flexbox to center the menu text within the tile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-text {
+    color: #d3d3d3; /* light grey */
+    font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    pointer-events: none; /* Clicks pass through to trigger tile flip */
 }
 
 /* Hover effect for grid items */

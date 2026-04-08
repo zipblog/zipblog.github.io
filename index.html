@@ -19,11 +19,6 @@
         <div class="logo">
             <a href="#"><img src="immagini/logo-zip.png" alt="ZIP Logo"></a>
         </div>
-        <nav class="nav">
-            <a href="#">about</a>
-            <a href="#">works</a>
-            <a href="#">contacts</a>
-        </nav>
     </header>
 
     <main class="grid-container" id="grid">
@@ -56,6 +51,11 @@
 
                 const tileFront = document.createElement('div');
                 tileFront.classList.add('tile-front');
+                
+                // Inject Menu into Grid (first three tiles)
+                if (i === 0) tileFront.innerHTML = '<span class="tile-text">WORKS</span>';
+                if (i === 1) tileFront.innerHTML = '<span class="tile-text">ABOUT</span>';
+                if (i === 2) tileFront.innerHTML = '<span class="tile-text">CONTACT</span>';
 
                 const tileBack = document.createElement('div');
                 tileBack.classList.add('tile-back');
