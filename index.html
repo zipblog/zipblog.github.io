@@ -52,10 +52,10 @@
                 const tileFront = document.createElement('div');
                 tileFront.classList.add('tile-front');
                 
-                // Inject Menu into Grid (first three tiles)
-                if (i === 0) tileFront.innerHTML = '<span class="tile-text">WORKS</span>';
-                if (i === 1) tileFront.innerHTML = '<span class="tile-text">ABOUT</span>';
-                if (i === 2) tileFront.innerHTML = '<span class="tile-text">CONTACT</span>';
+                // Inject Menu into Grid (last three tiles of the first row)
+                if (i === 5) tileFront.innerHTML = '<span class="tile-text">WORKS</span>';
+                if (i === 6) tileFront.innerHTML = '<span class="tile-text">ABOUT</span>';
+                if (i === 7) tileFront.innerHTML = '<span class="tile-text">CONTACT</span>';
 
                 const tileBack = document.createElement('div');
                 tileBack.classList.add('tile-back');

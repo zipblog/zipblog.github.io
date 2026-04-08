@@ -119,7 +119,7 @@ body, html {
 }
 
 .tile-text {
-    color: #d3d3d3; /* light grey */
+    color: #333333; /* dark grey/black for high contrast */
     font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
