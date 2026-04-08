@@ -44,21 +44,18 @@ body, html {
 }
 
 .logo a {
-    text-decoration: none;
-    color: #000;
-    font-family: 'Bodoni Moda', serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    /* High contrast text-shadow to ensure readability regardless of background */
-    text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.6), -2px -2px 15px rgba(255, 255, 255, 0.6);
-    transition: transform 0.3s ease;
     display: inline-block;
 }
 
-.logo a:hover {
-    transform: scale(1.02);
+.logo a img {
+    height: 140px; /* significantly larger */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover img {
+    transform: scale(1.05); /* little bit of hover */
 }
 
 .nav {
@@ -69,24 +66,17 @@ body, html {
 
 .nav a {
     text-decoration: none;
-    color: #000;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 30px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    color: #d3d3d3; /* light grey contrasting well with black logo */
+    font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    color: #ffffff;
 }
 
 /* Interactive Grid System */
