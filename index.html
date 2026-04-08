@@ -52,10 +52,23 @@
                 const tileFront = document.createElement('div');
                 tileFront.classList.add('tile-front');
                 
-                // Inject Menu into Grid (last three tiles of the first row)
-                if (i === 5) tileFront.innerHTML = '<span class="tile-text">WORKS</span>';
-                if (i === 6) tileFront.innerHTML = '<span class="tile-text">ABOUT</span>';
-                if (i === 7) tileFront.innerHTML = '<span class="tile-text">CONTACT</span>';
+                // Inject responsive content for both desktop and mobile
+                let frontHTML = '';
+                
+                // Desktop menu
+                if (i === 5) frontHTML += '<span class="tile-text desktop-only">WORKS</span>';
+                if (i === 6) frontHTML += '<span class="tile-text desktop-only">ABOUT</span>';
+                if (i === 7) frontHTML += '<span class="tile-text desktop-only">CONTACT</span>';
+                
+                // Mobile menu
+                if (i === 0) frontHTML += '<span class="tile-text mobile-only">WORKS</span>';
+                if (i === 1) frontHTML += '<span class="tile-text mobile-only">ABOUT</span>';
+                if (i === 2) frontHTML += '<span class="tile-text mobile-only">CONTACT</span>';
+                
+                // Mobile logo
+                if (i === 4) frontHTML += '<img src="immagini/logo-zip.png" alt="ZIP" class="mobile-only logo-tile-img">';
+                
+                tileFront.innerHTML = frontHTML;
 
                 const tileBack = document.createElement('div');
                 tileBack.classList.add('tile-back');
