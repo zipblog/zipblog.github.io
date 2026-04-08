@@ -1,0 +1,169 @@
+/* Base Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #111;
+    /* Full-screen fixed background per requirements */
+    background-image: url('immagini/image_background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f4f4f4; /* Fallback */
+}
+
+/* Typography and Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    z-index: 100;
+    pointer-events: none; /* Allows clicks to pass through to the grid */
+}
+
+.logo {
+    pointer-events: auto;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    /* High contrast text-shadow to ensure readability regardless of background */
+    text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.6), -2px -2px 15px rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.logo a:hover {
+    transform: scale(1.02);
+}
+
+.nav {
+    pointer-events: auto;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Interactive Grid System */
+.grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    /* 8x4 structure */
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    z-index: 10;
+}
+
+/* Grid Tile Item */
+.tile {
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.tile-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Flip Interaction */
+.tile.flipped .tile-inner {
+    transform: rotateY(180deg);
+}
+
+.tile-front, .tile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Front Face: Transparent with subtle borders to show grid */
+.tile-front {
+    background: transparent;
+    /* Subtle grid lines */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02); /* Very subtle dark inner edge for safety against light bg */
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Hover effect for grid items */
+.tile:hover .tile-front {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Back Face: Reveals random image */
+.tile-back {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    transform: rotateY(180deg);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Edge cases to clear outer borders creating a cleaner edge if desired */
+.tile:nth-child(8n) .tile-front {
+    border-right: none;
+}
+.tile:nth-child(n+25) .tile-front {
+    border-bottom: none;
+}
