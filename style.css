@@ -190,10 +190,15 @@ body, html {
         display: none;
     }
 
-    /* Change grid structure: 3 columns, 11 rows to fit 32 tiles */
+    /* Change grid structure: 3 columns, 6 rows to make tiles significantly larger */
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(11, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    
+    /* Limit the number of tiles to 18 (3x6) to fit the grid correctly on mobile */
+    .tile:nth-child(n+19) {
+        display: none !important;
     }
     
     /* Ensure tiles can scale down font safely if needed */
@@ -209,7 +214,8 @@ body, html {
     .tile:nth-child(3n) .tile-front {
         border-right: none;
     }
-    .tile:nth-child(n+31) .tile-front {
+    /* Clear bottom border for the 6th row (tiles 16, 17, 18) */
+    .tile:nth-child(n+16) .tile-front {
         border-bottom: none;
     }
 }
