@@ -255,7 +255,8 @@ body {
 .works-title-link {
     font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
     font-size: 2rem;
-    color: #333;
+    color: #000; /* Solid black as depicted */
+    font-weight: 700; /* Bold weight */
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.3s ease;
@@ -276,20 +277,24 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Add spacing between the boxes */
+    gap: 20px; /* Set vertical separation exactly to 20px */
 }
 
 
 .works-list a {
     display: flex;
-    align-items: center; /* Vertically centered */
-    text-align: left; /* Horizontally aligned left */
-    padding: 40px 20px; /* Generous space simulating 2cm top/bottom */
-    border: 1px solid #000; /* Full rectangular enclosed box */
+    align-items: center; 
+    text-align: left; 
+    padding: 20px 30px; /* Matched the screenshot's padding ratio */
+    border: 1px solid #000; 
+    max-width: 350px; /* Narrower width mimicking the image accurately */
+    width: 100%;
     text-decoration: none;
-    color: #333333;
-    text-transform: lowercase; /* Keep strictly lowercase */
-    font-size: 1.6rem;
+    color: #000;
+    text-transform: lowercase; 
+    font-size: 1.2rem; /* Reduced font size naturally compared to header */
+    font-weight: 400; 
+    letter-spacing: 0.02em;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
