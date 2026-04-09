@@ -12,8 +12,9 @@
 
 body, html {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
     color: #111;
     /* Full-screen fixed background per requirements */
@@ -23,6 +24,18 @@ body, html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #f4f4f4; /* Fallback */
+}
+
+/* Global padding for all scrolling subpages out of the box */
+body {
+    padding-bottom: 5rem;
+}
+
+/* Force lock dimensions on the grid homepage */
+.home-fixed {
+    height: 100vh;
+    overflow: hidden !important;
+    padding-bottom: 0;
 }
 
 /* Typography and Header */
