@@ -317,3 +317,48 @@ body {
     display: block;
     width: 100%;
 }
+
+/* ------------------------------------- */
+/* EVENT DETAILS PAGE WIREFRAMES         */
+/* ------------------------------------- */
+
+.event-article {
+    max-width: 800px;
+    margin-bottom: 50px;
+    font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+}
+
+.event-article h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+}
+
+.event-article p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    color: #333;
+}
+
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force perfect squares mimicking gallery cards */
+    background-color: #eee;
+}
+
+/* Ensure mobile compatibility for grid gallery */
+@media (max-width: 768px) {
+    .event-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Break down to 2 columns on mobile */
+        gap: 10px;
+    }
+}

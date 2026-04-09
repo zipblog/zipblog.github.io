@@ -9,18 +9,34 @@
 </head>
 <body class="works-page">
     <header class="header page-header">
-        <ul class="events-list" style="margin-top: 2rem;">
-            <li class="event-box" style="margin-bottom: 0;">
-                <a href="works.html">20122025 - evento 01</a>
-            </li>
-        </ul>
+        <!-- Replaced ul/li structure with a div for standalone back button rendering -->
+        <div class="event-box" style="margin-top: 2rem;">
+            <a href="works.html">20122025 - evento 01</a>
+        </div>
     </header>
 
     <main class="works-container" style="padding-top: 4rem;">
-        <h1 style="font-family: var(--primary-font, 'Roboto Condensed'); text-transform: lowercase;">Event Details</h1>
-        <p style="font-family: var(--primary-font, 'Roboto Condensed'); font-size: 1.2rem; margin-top: 1rem;">
-            Details about evento 01 will go here.
-        </p>
+        
+        <!-- Article Component -->
+        <article class="event-article">
+            <h3>la condizione del nomade</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id sagittis erat. Vivamus ac risus sed lectus luctus volutpat nec vel quam. Proin non arcu condimentum, lobortis aliquet lorem, vulputate.</p>
+            <p>Pellentesque egestas ex id leo blandit semper. In id diam metus. Fusce posuere orci vitae neque pharetra convallis. Curabitur vel magna lorem. Maecenas tristique massa vel quam consectetur eleifend.</p>
+            <p>Donec varius varius erat a vulputate. Morbi auctor finibus iaculis. Nulla facilisi. Praesent eleifend sapien id tincidunt facilisis. Integer eget interdum est. Fusce non tempor urna. Sed pellentesque dolor in turpis blandit viverra. Etiam at enim elit. Phasellus sit amet.</p>
+        </article>
+
+        <!-- Gallery Grid Component -->
+        <section class="event-gallery">
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+            <div class="gallery-placeholder"></div>
+        </section>
+        
     </main>
 </body>
 </html>
