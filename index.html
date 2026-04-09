@@ -80,9 +80,15 @@
                 tileInner.appendChild(tileBack);
                 tile.appendChild(tileInner);
 
-                // Add flip interaction on click
+                // Add flip interaction or navigation
                 tile.addEventListener('click', () => {
-                    tile.classList.toggle('flipped');
+                    const tileText = tile.querySelector('.tile-text');
+                    // Check if this specific tile is the 'WORKS' link
+                    if (tileText && tileText.textContent === 'WORKS') {
+                        window.location.href = 'works.html';
+                    } else {
+                        tile.classList.toggle('flipped');
+                    }
                 });
 
                 gridContainer.appendChild(tile);
