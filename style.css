@@ -220,3 +220,72 @@ body, html {
         border-bottom: none;
     }
 }
+
+/* ------------------------------------- */
+/* WORKS PAGE SPECIFIC                   */
+/* ------------------------------------- */
+
+.works-page {
+    background-image: none;
+    background-color: #fff; /* Clean minimal background */
+    overflow-y: auto; /* Allow normal scrolling */
+}
+
+/* Ensure the header is visible on the works page across all breakpoints */
+.works-page .header {
+    display: flex;
+    pointer-events: auto;
+    position: relative; /* In document flow */
+    padding: 2rem 3rem;
+}
+
+.works-title-link {
+    font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color 0.3s ease;
+}
+
+.works-title-link:hover {
+    color: #000;
+}
+
+/* Works CSS formatting */
+.works-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 3rem 5rem;
+}
+
+.works-list {
+    list-style: none;
+    /* Using Flexbox for the list as requested */
+    display: flex;
+    flex-direction: column;
+}
+
+.works-list li {
+    border-bottom: 1px solid #000; /* 1px black border */
+}
+
+.works-list li:first-child {
+    border-top: 1px solid #000;
+}
+
+.works-list a {
+    display: block;
+    padding: 1.5rem 1rem;
+    text-decoration: none;
+    color: #333333;
+    text-transform: lowercase; /* Lowercase text constraint */
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+}
+
+.works-list a:hover {
+    background-color: #d3d3d3; /* Light grey hover effect */
+    color: #000;
+    padding-left: 2rem; /* Add slightly enhanced interactibility */
+}
