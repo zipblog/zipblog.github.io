@@ -535,19 +535,18 @@ body {
     position: relative;
 }
 
-.zip-logo-text {
-    font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    color: #111;
-    /* Default dark text */
-    text-decoration: none;
-    text-transform: lowercase;
-    line-height: 1;
+.zip-logo-image {
+    display: inline-block;
+}
+
+.zip-logo-image img {
+    height: 140px;
+    width: auto;
+    display: block;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.zip-logo-text:hover {
+.zip-logo-image:hover img {
     transform: scale(1.05);
     opacity: 0.8;
 }
@@ -655,8 +654,8 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .zip-logo-text {
-        font-size: 3.5rem;
+    .zip-logo-image img {
+        height: 100px;
     }
 
     .zip-container {
