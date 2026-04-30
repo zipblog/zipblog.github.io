@@ -20,14 +20,21 @@ html {
     overflow-y: auto;
     font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
     color: #111;
-    /* Full-screen fixed background per requirements */
-    background-image: url('immagini/image_background.jpeg');
+}
+
+/* Static Home Background */
+.home-body {
+    background-image: url('immagini/image_home.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #f4f4f4;
-    /* Fallback */
+    background-color: white;
+    /* Fallback color */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Global padding for all scrolling subpages out of the box */
@@ -445,7 +452,8 @@ body {
 
 .contacts-page {
     background-image: none;
-    background-color: #f4f4f4; /* Match fallback clean background */
+    background-color: #f4f4f4;
+    /* Match fallback clean background */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -484,7 +492,8 @@ body {
 }
 
 .contact-logo-back img {
-    height: 80px; /* Small logo for back button */
+    height: 80px;
+    /* Small logo for back button */
     width: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -499,9 +508,11 @@ body {
         top: 1.5rem;
         left: 1.5rem;
     }
+
     .contact-logo-back img {
         height: 60px;
     }
+
     .contact-link {
         font-size: 1.2rem;
     }
@@ -528,7 +539,8 @@ body {
     font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
     font-size: 5rem;
     font-weight: 700;
-    color: #111; /* Default dark text */
+    color: #111;
+    /* Default dark text */
     text-decoration: none;
     text-transform: lowercase;
     line-height: 1;
@@ -548,9 +560,11 @@ body {
 
 .zip-article {
     max-width: 800px;
-    margin: 40px auto 40px 0; /* Left-aligned within container */
+    margin: 40px auto 40px 0;
+    /* Left-aligned within container */
     font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-    text-transform: none; /* Override global lowercase for readability */
+    text-transform: none;
+    /* Override global lowercase for readability */
 }
 
 .zip-article h2 {
@@ -640,20 +654,25 @@ body {
     .zip-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .zip-logo-text {
         font-size: 3.5rem;
     }
+
     .zip-container {
         padding: 0 1.5rem 3rem;
     }
+
     .zip-article {
         margin: 20px auto;
     }
+
     .journal-layout {
         grid-template-columns: 1fr;
         gap: 20px;
         margin-top: 40px;
     }
+
     .journal-left {
         display: flex;
         gap: 15px;
