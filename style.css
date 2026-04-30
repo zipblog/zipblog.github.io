@@ -455,33 +455,40 @@ body {
     opacity: 0.5;
 }
 
-.contact-logo-back {
-    position: absolute;
-    top: 2rem;
-    left: 3rem;
+/* Shared Site Header and Logo */
+.site-header {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 3rem;
+    position: relative;
     z-index: 100;
 }
 
-.contact-logo-back img {
-    height: 80px;
-    /* Small logo for back button */
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease;
+.site-logo-link {
+    display: inline-block;
+    text-decoration: none;
 }
 
-.contact-logo-back:hover img {
+.site-logo {
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-logo-link:hover .site-logo {
     transform: scale(1.05);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-    .contact-logo-back {
-        top: 1.5rem;
-        left: 1.5rem;
+    .site-header {
+        padding: 1.5rem;
     }
 
-    .contact-logo-back img {
-        height: 60px;
+    .site-logo {
+        max-width: 90px;
     }
 
     .contact-link {
@@ -499,28 +506,7 @@ body {
     overflow-y: auto;
 }
 
-.zip-header {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 3rem;
-    position: relative;
-}
 
-.zip-logo-image {
-    display: inline-block;
-}
-
-.zip-logo-image img {
-    height: 140px;
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.zip-logo-image:hover img {
-    transform: scale(1.05);
-    opacity: 0.8;
-}
 
 .zip-container {
     padding: 0 3rem 5rem;
@@ -623,10 +609,6 @@ body {
 @media (max-width: 768px) {
     .zip-gallery {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .zip-logo-image img {
-        height: 100px;
     }
 
     .zip-container {
