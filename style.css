@@ -162,7 +162,7 @@ body {
 }
 
 /* Flip Interaction */
-.tile.flipped .tile-inner {
+.tile:hover .tile-inner {
     transform: rotateY(180deg);
 }
 
@@ -177,31 +177,12 @@ body {
 
 /* Front Face: Transparent with subtle borders to show grid */
 .tile-front {
-    background: transparent;
-    /* Subtle grid lines */
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
-    /* Very subtle dark inner edge for safety against light bg */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0,0,0,0.05);
     transition: background 0.4s ease, backdrop-filter 0.4s ease;
-
-    /* Flexbox to center the menu text within the tile */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.tile-text {
-    color: #333333;
-    /* dark grey/black for high contrast */
-    font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    text-transform: lowercase;
-    /* Force lowercase per requirements */
-    pointer-events: none;
-    /* Clicks pass through to trigger tile flip */
 }
 
 /* Hover effect for grid items */
@@ -222,16 +203,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Edge cases to clear outer borders creating a cleaner edge on desktop */
-@media (min-width: 769px) {
-    .tile:nth-child(8n) .tile-front {
-        border-right: none;
-    }
-
-    .tile:nth-child(n+25) .tile-front {
-        border-bottom: none;
-    }
-}
 
 /* ------------------------------------- */
 /* RESPONSIVE LAYOUT (Mobile & Tablets)  */
