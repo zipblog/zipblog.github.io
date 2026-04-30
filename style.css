@@ -438,3 +438,71 @@ body {
         gap: 10px;
     }
 }
+
+/* ------------------------------------- */
+/* CONTACTS PAGE SPECIFIC                */
+/* ------------------------------------- */
+
+.contacts-page {
+    background-image: none;
+    background-color: #f4f4f4; /* Match fallback clean background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-link {
+    font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+    text-transform: lowercase;
+}
+
+.contact-link:hover {
+    opacity: 0.5;
+}
+
+.contact-logo-back {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    z-index: 100;
+}
+
+.contact-logo-back img {
+    height: 80px; /* Small logo for back button */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.contact-logo-back:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .contact-logo-back {
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+    .contact-logo-back img {
+        height: 60px;
+    }
+    .contact-link {
+        font-size: 1.2rem;
+    }
+}
