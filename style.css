@@ -1,5 +1,7 @@
 /* Base Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,7 +12,8 @@
     color: #fff;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
@@ -23,7 +26,8 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #f4f4f4; /* Fallback */
+    background-color: #f4f4f4;
+    /* Fallback */
 }
 
 /* Global padding for all scrolling subpages out of the box */
@@ -49,7 +53,8 @@ body {
     align-items: center;
     padding: 2rem 3rem;
     z-index: 100;
-    pointer-events: none; /* Allows clicks to pass through to the grid */
+    pointer-events: none;
+    /* Allows clicks to pass through to the grid */
 }
 
 .logo {
@@ -61,17 +66,63 @@ body {
 }
 
 .logo a img {
-    height: 140px; /* significantly larger */
+    height: 140px;
+    /* significantly larger */
     width: auto;
     display: block;
     transition: transform 0.3s ease;
 }
 
 .logo a:hover img {
-    transform: scale(1.05); /* little bit of hover */
+    transform: scale(1.05);
+    /* little bit of hover */
 }
 
 /* Nav removed from header, menu items now styled within grid tiles */
+
+.center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.center-logo a {
+    display: inline-block;
+}
+
+.center-logo a img {
+    height: 140px;
+    /* same height as before */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.center-logo a:hover img {
+    transform: scale(1.05);
+    /* slightly scale up on hover */
+}
+
+.footer-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.2rem;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+    text-transform: lowercase;
+}
+
+.footer-link:hover {
+    opacity: 0.6;
+}
 
 /* Interactive Grid System */
 .grid-container {
@@ -108,7 +159,8 @@ body {
     transform: rotateY(180deg);
 }
 
-.tile-front, .tile-back {
+.tile-front,
+.tile-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -122,9 +174,10 @@ body {
     /* Subtle grid lines */
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02); /* Very subtle dark inner edge for safety against light bg */
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+    /* Very subtle dark inner edge for safety against light bg */
     transition: background 0.4s ease, backdrop-filter 0.4s ease;
-    
+
     /* Flexbox to center the menu text within the tile */
     display: flex;
     justify-content: center;
@@ -132,13 +185,16 @@ body {
 }
 
 .tile-text {
-    color: #333333; /* dark grey/black for high contrast */
+    color: #333333;
+    /* dark grey/black for high contrast */
     font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.03em;
-    text-transform: lowercase; /* Force lowercase per requirements */
-    pointer-events: none; /* Clicks pass through to trigger tile flip */
+    text-transform: lowercase;
+    /* Force lowercase per requirements */
+    pointer-events: none;
+    /* Clicks pass through to trigger tile flip */
 }
 
 /* Hover effect for grid items */
@@ -156,7 +212,7 @@ body {
     background-color: #000;
     transform: rotateY(180deg);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Edge cases to clear outer borders creating a cleaner edge on desktop */
@@ -164,6 +220,7 @@ body {
     .tile:nth-child(8n) .tile-front {
         border-right: none;
     }
+
     .tile:nth-child(n+25) .tile-front {
         border-bottom: none;
     }
@@ -190,11 +247,12 @@ body {
 }
 
 @media (max-width: 768px) {
+
     /* Swap visibility */
     .desktop-only {
         display: none !important;
     }
-    
+
     .mobile-only {
         display: block !important;
     }
@@ -209,12 +267,12 @@ body {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(6, 1fr);
     }
-    
+
     /* Limit the number of tiles to 18 (3x6) to fit the grid correctly on mobile */
     .tile:nth-child(n+19) {
         display: none !important;
     }
-    
+
     /* Ensure tiles can scale down font safely if needed */
     .tile-text {
         font-size: 1.2rem;
@@ -225,9 +283,11 @@ body {
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .tile:nth-child(3n) .tile-front {
         border-right: none;
     }
+
     /* Clear bottom border for the 6th row (tiles 16, 17, 18) */
     .tile:nth-child(n+16) .tile-front {
         border-bottom: none;
@@ -238,7 +298,7 @@ body {
         width: 100% !important;
         max-width: none !important;
         padding: 10px 15px !important;
-        margin-bottom: 25px !important; 
+        margin-bottom: 25px !important;
         border: 1px solid black !important;
         text-align: left !important;
         background-color: transparent !important;
@@ -258,23 +318,28 @@ body {
 
 .works-page {
     background-image: none;
-    background-color: #fff; /* Clean minimal background */
-    overflow-y: auto; /* Allow normal scrolling */
+    background-color: #fff;
+    /* Clean minimal background */
+    overflow-y: auto;
+    /* Allow normal scrolling */
 }
 
 /* Ensure the header is visible on the works page across all breakpoints */
 .works-page .header {
     display: flex;
     pointer-events: auto;
-    position: relative; /* In document flow */
+    position: relative;
+    /* In document flow */
     padding: 2rem 3rem;
 }
 
 .works-title-link {
     font-family: 'Roboto Condensed', 'Arial Narrow', 'Arial Cyrillic Narrow', sans-serif;
     font-size: 2rem;
-    color: #000; /* Solid black as depicted */
-    font-weight: 700; /* Bold weight */
+    color: #000;
+    /* Solid black as depicted */
+    font-weight: 700;
+    /* Bold weight */
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.3s ease;
@@ -287,27 +352,36 @@ body {
 /* Works CSS formatting */
 .works-container {
     max-width: 900px;
-    margin: 0; 
-    padding: 0 3rem 5rem; /* Reverted top padding since the new class handles the drop */
+    margin: 0;
+    padding: 0 3rem 5rem;
+    /* Reverted top padding since the new class handles the drop */
 }
 
 .events-list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start !important; /* Forza l'allineamento a sinistra sotto il titolo works */
-    margin-top: 80px !important; /* Distanza verticale dal titolo works (circa 5cm) */
-    gap: 0; /* Distanza gestita dal margine dei box */
+    align-items: flex-start !important;
+    /* Forza l'allineamento a sinistra sotto il titolo works */
+    margin-top: 80px !important;
+    /* Distanza verticale dal titolo works (circa 5cm) */
+    gap: 0;
+    /* Distanza gestita dal margine dei box */
 }
 
 /* Stile per TUTTE le caselle rettangolari interattive */
 .event-box {
-    border: 1px solid black !important; /* Forza il bordo su tutti e 4 i lati */
-    padding: 10px 15px !important; /* Respiro interno minimo, molto stretto */
-    max-width: 250px !important; /* Rende il rettangolo molto più piccolo e compatto in larghezza */
+    border: 1px solid black !important;
+    /* Forza il bordo su tutti e 4 i lati */
+    padding: 10px 15px !important;
+    /* Respiro interno minimo, molto stretto */
+    max-width: 250px !important;
+    /* Rende il rettangolo molto più piccolo e compatto in larghezza */
     width: 100%;
-    text-align: left !important; /* Forza l'allineamento del testo a sinistra */
+    text-align: left !important;
+    /* Forza l'allineamento del testo a sinistra */
     background-color: transparent !important;
-    margin-bottom: 25px !important; /* Distanza tra i rettangoli */
+    margin-bottom: 25px !important;
+    /* Distanza tra i rettangoli */
     box-sizing: border-box !important;
 }
 
@@ -351,14 +425,16 @@ body {
 
 .gallery-placeholder {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Force perfect squares mimicking gallery cards */
+    aspect-ratio: 1 / 1;
+    /* Force perfect squares mimicking gallery cards */
     background-color: #eee;
 }
 
 /* Ensure mobile compatibility for grid gallery */
 @media (max-width: 768px) {
     .event-gallery {
-        grid-template-columns: repeat(2, 1fr); /* Break down to 2 columns on mobile */
+        grid-template-columns: repeat(2, 1fr);
+        /* Break down to 2 columns on mobile */
         gap: 10px;
     }
 }
