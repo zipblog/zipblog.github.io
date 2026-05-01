@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.getElementById('tile-grid');
     if (!gridContainer) return; // Only run on pages with the grid
-    
+
     const rows = 4;
     const cols = 8;
     const totalTiles = rows * cols;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const tileFront = document.createElement('div');
         tileFront.classList.add('tile-front');
         // Front face remains empty and transparent per CSS styling
-        
+
         const tileBack = document.createElement('div');
         tileBack.classList.add('tile-back');
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tile.appendChild(tileInner);
 
         // Add flip interaction on click
-        tile.addEventListener('click', function() {
+        tile.addEventListener('click', function () {
             this.classList.toggle('flipped');
         });
 
