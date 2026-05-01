@@ -647,3 +647,13 @@ body {
     display: inline-block !important;
     margin: 0 !important;
 }
+
+/* Minimalist Site Footer */
+.site-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.5); /* Faded color for a subtle look */
+    width: 100%;
+}
