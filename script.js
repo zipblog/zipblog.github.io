@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
         tileInner.appendChild(tileBack);
         tile.appendChild(tileInner);
 
+        // Add flip interaction on click
+        tile.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+
         gridContainer.appendChild(tile);
     }
 });

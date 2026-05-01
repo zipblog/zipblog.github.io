@@ -162,7 +162,7 @@ body {
 }
 
 /* Flip Interaction */
-.tile:hover .tile-inner {
+.tile.flipped .tile-inner {
     transform: rotateY(180deg);
 }
 
