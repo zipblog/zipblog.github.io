@@ -151,6 +151,7 @@ body {
     height: 100%;
     perspective: 1200px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tile-inner {
