@@ -13,7 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
         'immagini/image3.jpeg',
         'immagini/image4.jpeg',
         'immagini/image5.jpeg',
-        'immagini/image6.jpeg'
+        'immagini/image6.jpeg',
+        'immagini/image7.jpeg',
+        'immagini/image8.jpeg',
+        'immagini/image9.jpeg',
+        'immagini/image10.jpeg',
+        'immagini/image11.jpeg',
+        'immagini/image12.jpeg',
+        'immagini/image13.jpeg',
+        'immagini/image14.jpeg',
+        'immagini/image15.jpeg',
+        'immagini/image16.jpeg'
     ];
 
     for (let i = 0; i < totalTiles; i++) {
