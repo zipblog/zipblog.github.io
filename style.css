@@ -631,3 +631,18 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* Strict Logo Wrap */
+.logo-wrapper {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    display: block !important;
+}
+
+.logo-wrapper img {
+    max-width: 150px !important; /* Dimensione compatta */
+    height: auto !important;
+    display: inline-block !important;
+    margin: 0 !important;
+}
